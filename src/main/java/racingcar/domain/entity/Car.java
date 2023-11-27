@@ -1,6 +1,6 @@
 package racingcar.domain.entity;
 
-import camp.nextstep.edu.missionutils.Randoms;
+import static racingcar.domain.entity.Position;
 
 public class Car {
     private final int MOVE = 1;
@@ -14,14 +14,9 @@ public class Car {
     }
 
     private int calculatePosition() {
-        if (isMove()) {
+        if (Move.isMove()) {
             this.position = this.position + MOVE;
         }
         return this.position;
-    }
-
-    private boolean isMove() {
-        int move = Randoms.pickNumberInRange(0,9);
-        return move >= 4;
     }
 }
