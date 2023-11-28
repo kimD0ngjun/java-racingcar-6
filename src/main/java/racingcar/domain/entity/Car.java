@@ -17,4 +17,9 @@ public class Car {
         int move = Randoms.pickNumberInRange(0,9);
         return move >= MOVE_STANDARD;
     }
+
+    // for test-code and encapsulation
+    public String getName() {
+        return name;
+    }
 }

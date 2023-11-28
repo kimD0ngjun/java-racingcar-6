@@ -9,4 +9,9 @@ public class Cars {
     public Cars(String cars) {
         this.cars = ListTypeChanger.changeListType(cars);
     }
+
+    // for test-code and encapsulation
+    public List<Car> getCars() {
+        return cars;
+    }
 }
