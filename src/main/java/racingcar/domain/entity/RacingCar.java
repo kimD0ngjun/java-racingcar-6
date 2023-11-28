@@ -3,24 +3,25 @@ package racingcar.domain.entity;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class RacingCar extends Car{
-    private final int MOVE = 1;
+    private final int FORWARD = 1;
+    private final int MOVE_STANDARD = 4;
 
     private int position = 0;
 
     public RacingCar(String name) {
         super(name);
-        this.position = calculatePosition();
+        this.position = incrementPosition();
     }
 
-    public int calculatePosition() {
+    public int incrementPosition() {
         if (isMove()) {
-            this.position = this.position + MOVE;
+            this.position += FORWARD;
         }
         return this.position;
     } // 외부에서 얘를 계속 호출해야 됨
 
     private boolean isMove() {
         int move = Randoms.pickNumberInRange(0,9);
-        return move >= 4;
+        return move >= MOVE_STANDARD;
     }
 }
