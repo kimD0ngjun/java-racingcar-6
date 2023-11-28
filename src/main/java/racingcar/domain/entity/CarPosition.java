@@ -1,7 +1,5 @@
 package racingcar.domain.entity;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class CarPosition extends Car{
     private final int FORWARD = 1;
 
