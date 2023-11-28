@@ -1,7 +1,7 @@
 package racingcar.utility;
 
 public class CarNameValidator {
-    private static final String SPECIAL_CHARACTER = ".*[!@#$%^&*(),.?\":{}|<>].*";
+    private static final String SPECIAL_CHARACTER = ".*[!@#$%^&*(),.?\":{}|<>\\-'`].*";
 
     // to prevent instantiation
     private CarNameValidator() {
