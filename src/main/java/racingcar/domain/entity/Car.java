@@ -8,7 +8,7 @@ public class Car {
 
     private String name;
 
-    Car(String name) {
+    public Car(String name) {
         CarNameValidator.isValid(name);
         this.name = name;
     }
