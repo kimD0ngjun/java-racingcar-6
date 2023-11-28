@@ -1,22 +1,11 @@
 package racingcar.domain.entity;
 
-import static racingcar.domain.entity.Position;
-
 public class Car {
-    private final int MOVE = 1;
 
     private String name;
-    private int position = 0;
 
-    public Car(String name) {
+    Car(String name) {
+        // 이름 유효성 평가 넣기
         this.name = name;
-        this.position = calculatePosition();
-    }
-
-    private int calculatePosition() {
-        if (Move.isMove()) {
-            this.position = this.position + MOVE;
-        }
-        return this.position;
     }
 }
