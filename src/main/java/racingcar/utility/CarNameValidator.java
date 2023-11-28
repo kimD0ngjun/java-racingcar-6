@@ -1,13 +1,14 @@
 package racingcar.utility;
 
 public class CarNameValidator {
+    private static final String SPECIAL_CHARACTER = ".*[!@#$%^&*(),.?\":{}|<>].*";
 
     // to prevent instantiation
     private CarNameValidator() {
     }
 
     public static boolean isValid(String carName) {
-        if (hasBlank(carName)) {
+        if (hasBlank(carName) || hasSpecialCharacter(carName)) {
             return false;
         }
         return true;
@@ -25,5 +26,9 @@ public class CarNameValidator {
         }
 
         return false;
+    }
+
+    private static boolean hasSpecialCharacter(String carName) {
+        return carName.matches(SPECIAL_CHARACTER);
     }
 }
