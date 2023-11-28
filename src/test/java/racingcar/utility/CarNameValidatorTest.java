@@ -1,6 +1,6 @@
 package racingcar.utility;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ public class CarNameValidatorTest {
         String[] wrongCases = {"", " ", "car ", "c ar", " car"};
 
         for (String wrongName : wrongCases) {
-            assertFalse(CarNameValidator.isValid(wrongName));
+            assertThrows(IllegalArgumentException.class, () -> CarNameValidator.isValid(wrongName));
         }
     }
 
@@ -22,7 +22,7 @@ public class CarNameValidatorTest {
         String[] wrongCases = {",", "!car", "ca>r", "(car)", "c-ar", ".car."};
 
         for (String wrongName : wrongCases) {
-            assertFalse(CarNameValidator.isValid(wrongName));
+            assertThrows(IllegalArgumentException.class, () -> CarNameValidator.isValid(wrongName));
         }
     }
 }

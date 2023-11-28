@@ -9,19 +9,19 @@ public class CarNameValidator {
 
     public static boolean isValid(String carName) {
         if (hasBlank(carName) || hasSpecialCharacter(carName)) {
-            return false;
+            throw new IllegalArgumentException();
         }
         return true;
     }
 
     private static boolean hasBlank(String carName) {
         if (carName.isBlank()) {
-            return true;
+            throw new IllegalArgumentException();
         }
 
         for (char c : carName.toCharArray()) {
             if (Character.isWhitespace(c)) {
-                return true;
+                throw new IllegalArgumentException();
             }
         }
 
@@ -29,6 +29,10 @@ public class CarNameValidator {
     }
 
     private static boolean hasSpecialCharacter(String carName) {
-        return carName.matches(SPECIAL_CHARACTER);
+        if (carName.matches(SPECIAL_CHARACTER)) {
+            throw new IllegalArgumentException();
+        }
+
+        return false;
     }
 }
