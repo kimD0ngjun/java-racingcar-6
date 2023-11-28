@@ -13,7 +13,7 @@ public class ListTypeChangerTest {
     void testListTypeChanger() {
         String testCars = "car1,car2,car3,car4";
 
-        List<Car> carList = ListTypeChanger.changeListType(testCars);
+        List<Car> carList = ListConverter.changeListType(testCars);
 
         assertCarListEquals(List.of("car1", "car2", "car3", "car4"), carList);
     }

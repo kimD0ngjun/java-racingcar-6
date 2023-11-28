@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.domain.entity.Car;
 
-public class ListTypeChanger {
+public class ListConverter {
     public static List<Car> changeListType(String cars) {
         if(cars.isBlank()) {
             throw new IllegalArgumentException();

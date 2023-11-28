@@ -1,36 +1,33 @@
 package racingcar.domain.entity;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class CarPosition extends Car{
     private final int FORWARD = 1;
-    private final String TRACK = "-";
+    private final int STOP = 0;
+    private final int MOVE_STANDARD = 4;
 
     private int position = 0;
 
     public CarPosition(String name) {
         super(name);
-        this.position = incrementPosition();
+        this.position += incrementPosition();
     }
 
     public int incrementPosition() {
-        if (super.isMove()) {
-            this.position += FORWARD;
+        if (isMove()) {
+            return FORWARD;
         }
-        return this.position;
+        return STOP;
     } // 외부에서 얘를 계속 호출해야 됨
+
+    protected boolean isMove() {
+        int move = Randoms.pickNumberInRange(0,9);
+        return move >= MOVE_STANDARD;
+    }
 
     // 1등 정하기
     public int comparePosition(CarPosition other) {
         return this.position - other.position;
-    }
-
-    // 트랙 그리기
-    public String trackPosition() {
-        StringBuilder track = new StringBuilder();
-
-        for (int i = 0; i < this.position; i++) {
-            track.append(TRACK);
-        }
-
-        return track.toString();
     }
 }
