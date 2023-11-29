@@ -5,7 +5,7 @@ import racingcar.view.message.Message;
 
 public class Try extends Input{
     @Override
-    public void message() {
+    public String message() {
         System.out.println(Message.TRY);
-        Console.readLine();
+        return Console.readLine();
     }}

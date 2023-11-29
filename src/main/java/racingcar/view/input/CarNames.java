@@ -5,8 +5,8 @@ import racingcar.view.message.Message;
 
 public class CarNames extends Input{
     @Override
-    public void message() {
+    public String message() {
         System.out.println(Message.CAR_NAME);
-        Console.readLine();
+        return Console.readLine();
     }
 }
