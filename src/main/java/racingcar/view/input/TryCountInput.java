@@ -1,11 +1,11 @@
 package racingcar.view.input;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.view.message.Message;
+import racingcar.view.message.InputMessage;
 
-public class Try extends Input{
+public class TryCountInput implements Input{
     @Override
     public String message() {
-        System.out.println(Message.TRY);
+        System.out.println(InputMessage.TRY_COUNT.getMessage());
         return Console.readLine();
     }}

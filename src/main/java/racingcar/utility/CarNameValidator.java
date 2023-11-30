@@ -8,7 +8,7 @@ public class CarNameValidator {
     }
 
     public static boolean isValid(String carName) {
-        if (hasBlank(carName) || hasSpecialCharacter(carName)) {
+        if (hasBlank(carName) || hasSpecialCharacter(carName) || isOverName(carName)) {
             throw new IllegalArgumentException();
         }
         return true;
@@ -30,6 +30,14 @@ public class CarNameValidator {
 
     private static boolean hasSpecialCharacter(String carName) {
         if (carName.matches(SPECIAL_CHARACTER)) {
+            throw new IllegalArgumentException();
+        }
+
+        return false;
+    }
+
+    private static boolean isOverName(String carNames) {
+        if (carNames.length() > 5) {
             throw new IllegalArgumentException();
         }
 
